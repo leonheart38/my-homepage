@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サンノゼの丘クリニック｜岡山市北区の内科・美容クリニック</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; color: #2e3830; background: #fdfaf4; line-height: 1.7; }
+
+  nav { background: rgba(255,253,248,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #ddd4b8; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .logo-icon { width: 40px; height: 40px; background: #4a8c6e; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .logo-icon svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+  .logo-name { font-size: 15px; font-weight: 700; color: #1e3d2f; }
+  .logo-en { font-size: 10px; color: #7a9c88; letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a { font-size: 13px; color: #5a7060; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .nav-links a:hover { color: #2d5c45; border-bottom-color: #4a8c6e; }
+  .nav-reserve { background: #4a8c6e; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; padding: 9px 18px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; }
+  .nav-reserve:hover { background: #3b7a5e; }
+
+  .hero { position: relative; height: 600px; overflow: hidden; display: flex; align-items: center; }
+  .hero-bg { position: absolute; inset: 0; background-image: url("https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1400&q=80"); background-size: cover; background-position: center; filter: brightness(0.42); }
+  .hero-inner { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; gap: 3rem; width: 100%; }
+  .hero-text { flex: 1; color: #fff; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,234,217,0.2); border: 1px solid rgba(212,234,217,0.4); color: #c8f0d8; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.08em; }
+  .hero h1 { font-size: 38px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 1rem; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.9; margin-bottom: 2rem; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-main { background: #4a8c6e; color: #fff; border: none; border-radius: 10px; padding: 14px 24px; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-main:hover { background: #3b7a5e; }
+  .btn-sub { background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.6); border-radius: 10px; padding: 13px 22px; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+
+  .hours-card { background: rgba(255,253,248,0.97); border-radius: 18px; padding: 1.75rem; border: 1px solid #d6c9a8; min-width: 240px; }
+  .hours-card-title { font-size: 11px; font-weight: 700; color: #8a7a60; letter-spacing: 0.12em; margin-bottom: 1rem; }
+  .hours-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 8px 0; border-bottom: 1px solid #ede8dc; color: #3d4e40; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { font-weight: 500; }
+  .hours-row .time { color: #2d6b45; font-weight: 700; font-size: 12px; text-align: right; }
+  .tag-closed { color: #9b6060; font-size: 12px; font-weight: 700; }
+  .hours-note { margin-top: 10px; font-size: 11px; color: #9a8e7a; padding-top: 8px; border-top: 1px dashed #ddd4b8; line-height: 1.6; }
+
+  .features-bar { background: #4a8c6e; padding: 1.25rem 2rem; }
+  .features-bar-inner { max-width: 960px; margin: 0 auto; display: flex; gap: 0; justify-content: space-around; flex-wrap: wrap; }
+  .feature-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 13px; font-weight: 700; padding: 6px 12px; }
+
+  .section { padding: 4.5rem 2rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-label { font-size: 11px; font-weight: 700; color: #4a8c6e; letter-spacing: 0.14em; margin-bottom: 6px; }
+  .section-title { font-size: 24px; font-weight: 700; color: #1a3528; margin-bottom: 6px; }
+  .section-desc { font-size: 14px; color: #7a8c80; }
+  .divider { height: 3px; width: 40px; background: #4a8c6e; border-radius: 2px; margin-top: 12px; }
+
+  .photo-banner { width: 100%; height: 280px; overflow: hidden; position: relative; }
+  .photo-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(20,40,30,0.72) 0%, rgba(20,40,30,0.2) 60%, transparent 100%); display: flex; align-items: center; padding: 0 4rem; }
+  .photo-banner-text { color: #fff; }
+  .photo-banner-text .label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #a8d8bc; margin-bottom: 8px; }
+  .photo-banner-text h2 { font-size: 26px; font-weight: 700; line-height: 1.5; }
+  .photo-banner-text p { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 8px; }
+
+  .care-section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+  .care-photo { border-radius: 16px; overflow: hidden; height: 360px; }
+  .care-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .care-cards { display: flex; flex-direction: column; gap: 10px; }
+  .care-card { background: #fffdf8; border: 1px solid #ddd4b8; border-radius: 12px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.2s, transform 0.15s; }
+  .care-card:hover { border-color: #4a8c6e; transform: translateX(4px); }
+  .care-icon { width: 42px; height: 42px; min-width: 42px; background: #e8f2ec; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .care-card h3 { font-size: 14px; font-weight: 700; color: #1e3d2f; margin-bottom: 3px; }
+  .care-card p { font-size: 12px; color: #7a8c80; line-height: 1.6; }
+
+  .special-bg { background: #f2f6f3; }
+  .special-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .special-card { border-radius: 16px; overflow: hidden; border: 1px solid #ddd4b8; }
+  .special-card-img { width: 100%; height: 210px; object-fit: cover; display: block; }
+  .special-card-body { padding: 1.25rem; background: #fff; }
+  .special-tag { display: inline-block; font-size: 11px; font-weight: 700; background: #d4ead9; color: #2a6040; padding: 3px 10px; border-radius: 10px; margin-bottom: 8px; }
+  .special-tag.blue { background: #d4e4f0; color: #204878; }
+  .special-card-body h3 { font-size: 16px; font-weight: 700; color: #1e3d2f; margin-bottom: 6px; }
+  .special-card-body p { font-size: 13px; color: #6a7e70; line-height: 1.7; }
+
+  .beauty-bg { background: #faf4f7; }
+  .beauty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+  .beauty-photo { border-radius: 16px; overflow: hidden; height: 400px; }
+  .beauty-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .beauty-badge { display: inline-block; background: #f5e6f0; color: #8a4070; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .beauty-cards { display: flex; flex-direction: column; gap: 10px; margin-top: 1.25rem; }
+  .beauty-card { background: #fff; border: 1px solid #e8d8e0; border-radius: 12px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.2s; }
+  .beauty-card:hover { border-color: #c07090; }
+  .beauty-icon { width: 42px; height: 42px; min-width: 42px; background: #fce8f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .beauty-card h3 { font-size: 14px; font-weight: 700; color: #5a2040; margin-bottom: 3px; }
+  .beauty-card p { font-size: 12px; color: #9a7080; line-height: 1.6; }
+
+  .news-bg { background: #f5f0e6; }
+  .news-list { display: flex; flex-direction: column; gap: 8px; }
+  .news-item { background: #fff; border: 1px solid #ddd4b8; border-radius: 10px; padding: 1rem 1.25rem; display: flex; gap: 14px; align-items: flex-start; }
+  .news-meta { display: flex; flex-direction: column; gap: 4px; min-width: 100px; }
+  .news-date { font-size: 12px; color: #9a8e7a; }
+  .news-tag { font-size: 11px; font-weight: 700; background: #d4ead9; color: #2a6040; padding: 2px 9px; border-radius: 10px; display: inline-block; }
+  .news-tag.important { background: #fde8d4; color: #8a4020; }
+  .news-body { font-size: 14px; color: #3d4e40; line-height: 1.7; }
+
+  .doctor-section-grid { display: grid; grid-template-columns: 300px 1fr; gap: 2.5rem; align-items: start; }
+  .doctor-photo { border-radius: 16px; overflow: hidden; height: 380px; }
+  .doctor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .doctor-name { font-size: 26px; font-weight: 700; color: #1a3528; margin-bottom: 2px; }
+  .doctor-kana { font-size: 12px; color: #7a9c88; margin-bottom: 12px; letter-spacing: 0.06em; }
+  .doctor-title-badge { display: inline-block; font-size: 12px; color: #4a8c6e; font-weight: 700; background: #e8f2ec; border-radius: 6px; padding: 4px 12px; margin-bottom: 16px; }
+  .doctor-bio { font-size: 14px; color: #4a6050; line-height: 1.95; margin-bottom: 18px; }
+  .doctor-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .doctor-tag { font-size: 12px; background: #f5f0e6; color: #5a4a30; padding: 5px 14px; border-radius: 20px; border: 1px solid #ddd4b8; }
+
+  .time-bg { background: #f0ede4; }
+  .time-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .time-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid #ddd4b8; }
+  .time-table th { background: #4a8c6e; color: #fff; padding: 12px 16px; font-size: 14px; font-weight: 700; text-align: center; }
+  .time-table th:first-child { text-align: left; }
+  .time-table td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid #ede8dc; text-align: center; color: #3d4e40; }
+  .time-table tr:last-child td { border-bottom: none; }
+  .time-table td:first-child { font-weight: 700; background: #f9f6ee; color: #5a4a30; text-align: left; }
+  .time-open { color: #2a6040; font-weight: 700; }
+  .time-closed { color: #9b6060; }
+  .time-photo { border-radius: 16px; overflow: hidden; height: 100%; min-height: 280px; }
+  .time-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .time-note { margin-top: 12px; font-size: 13px; color: #7a8c80; background: #fff; border-radius: 10px; padding: 14px 18px; border: 1px solid #ddd4b8; line-height: 1.8; }
+  .time-note strong { color: #4a8c6e; }
+
+  .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .map-embed { border-radius: 16px; overflow: hidden; border: 1px solid #ddd4b8; height: 300px; }
+  .map-embed iframe { width: 100%; height: 100%; border: none; display: block; }
+  .access-info { display: flex; flex-direction: column; gap: 16px; }
+  .access-row { display: flex; gap: 12px; align-items: flex-start; }
+  .access-icon { width: 38px; height: 38px; min-width: 38px; background: #e8f2ec; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-top: 2px; }
+  .access-row-label { font-size: 11px; color: #7a9c88; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 2px; }
+  .access-row-val { font-size: 14px; color: #2e3830; }
+
+  footer { background: #1a2a22; color: #8ab09a; padding: 3rem 2rem 2rem; text-align: center; }
+  .footer-inner { max-width: 960px; margin: 0 auto; }
+  .footer-logo { font-size: 20px; font-weight: 700; color: #d4ead9; margin-bottom: 4px; }
+  .footer-en { font-size: 11px; color: #5a8c70; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .footer-links a { color: #7aaa8a; text-decoration: none; font-size: 13px; }
+  .footer-links a:hover { color: #d4ead9; }
+  .footer-info { font-size: 13px; color: #4a7060; line-height: 1.9; margin-bottom: 1.5rem; }
+  .footer-copy { font-size: 11px; color: #3a5040; }
+
+  @media (max-width: 720px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero { height: auto; padding: 3rem 1rem; }
+    .hero-inner { flex-direction: column; }
+    .hero h1 { font-size: 26px; }
+    .hours-card { min-width: auto; width: 100%; }
+    .care-section-grid, .beauty-grid, .special-grid, .doctor-section-grid, .time-inner, .access-grid { grid-template-columns: 1fr; }
+    .photo-banner { height: 200px; }
+    .photo-banner-overlay { padding: 0 1.5rem; }
+    .photo-banner-text h2 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    <div>
+      <div class="logo-name">サンノゼの丘クリニック</div>
+      <div class="logo-en">SAN JOSE NO OKA CLINIC</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#care">診療案内</a>
+    <a href="#special">特別診療</a>
+    <a href="#beauty">美容部門</a>
+    <a href="#doctor">医師紹介</a>
+    <a href="#hours">診療時間</a>
+    <a href="#access">アクセス</a>
+  </div>
+  <a href="#" class="nav-reserve">&#128197; Web予約</a>
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">岡山市北区 内科・美容クリニック</div>
+      <h1>地域の皆さまの<br>「かかりつけ医」として</h1>
+      <p class="hero-sub">一般内科から美容医療・CT診療まで、<br>サンノゼの丘クリニックは幅広いニーズにお応えします。</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-main">&#128197; ネット予約はこちら</a>
+        <a href="#care" class="btn-sub">診療案内を見る &rarr;</a>
+      </div>
+    </div>
+    <div class="hours-card">
+      <div class="hours-card-title">CLINIC HOURS</div>
+      <div class="hours-row"><span class="day">月〜金（平日）</span><span class="time">9:00〜12:30<br>16:00〜18:30</span></div>
+      <div class="hours-row"><span class="day">日曜日</span><span class="time">15:30〜18:30</span></div>
+      <div class="hours-row"><span class="day">土曜日・祝日</span><span class="tag-closed">休診</span></div>
+      <div class="hours-note">※ 受付は診療終了の15分前まで<br>※ Web予約もご利用いただけます</div>
+    </div>
+  </div>
+</section>
+
+<!-- 特徴バー -->
+<div class="features-bar">
+  <div class="features-bar-inner">
+    <div class="feature-item">&#127973; 一般内科・生活習慣病</div>
+    <div class="feature-item">&#129464; 膝関節注射</div>
+    <div class="feature-item">&#129691; 1日完結CT診療</div>
+    <div class="feature-item">&#10024; 美容医療・点滴</div>
+    <div class="feature-item">&#128197; 日曜診療あり</div>
+  </div>
+</div>
+
+<!-- 診療案内 -->
+<section class="section" id="care">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">MEDICAL CARE</div>
+      <div class="section-title">診療案内</div>
+      <div class="section-desc">一般内科から専門医療まで、幅広い症状に対応しています</div>
+      <div class="divider"></div>
+    </div>
+    <div class="care-section-grid">
+      <div class="care-photo">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80" alt="診療の様子" loading="lazy">
+      </div>
+      <div class="care-cards">
+        <div class="care-card"><div class="care-icon">&#127777;&#65039;</div><div><h3>発熱・風邪・感染症</h3><p>発熱・咳・喉の痛みなど一般的な感染症の診療</p></div></div>
+        <div class="care-card"><div class="care-icon">&#128138;</div><div><h3>生活習慣病</h3><p>高血圧・糖尿病・脂質異常症の管理と継続治療</p></div></div>
+        <div class="care-card"><div class="care-icon">&#129385;</div><div><h3>呼吸器・循環器疾患</h3><p>喘息・COPD・動悸・息切れなどの症状</p></div></div>
+        <div class="care-card"><div class="care-icon">&#129514;</div><div><h3>健康診断・予防接種</h3><p>特定健診・インフルエンザ・各種ワクチン接種</p></div></div>
+        <div class="care-card"><div class="care-icon">&#129514;</div><div><h3>各種検査</h3><p>血液検査・尿検査・心電図・胸部レントゲン</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フォトバナー1 -->
+<div class="photo-banner">
+  <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1400&q=80" alt="院内イメージ">
+  <div class="photo-banner-overlay">
+    <div class="photo-banner-text">
+      <div class="label">OUR COMMITMENT</div>
+      <h2>お一人おひとりに<br>丁寧な医療を</h2>
+      <p>些細なお悩みもお気軽にご相談ください</p>
+    </div>
+  </div>
+</div>
+
+<!-- 特別診療 -->
+<section class="section special-bg" id="special">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">SPECIAL CARE</div>
+      <div class="section-title">特別診療のご案内</div>
+      <div class="section-desc">当クリニックならではの専門的な診療メニュー</div>
+      <div class="divider"></div>
+    </div>
+    <div class="special-grid">
+      <div class="special-card">
+        <img class="special-card-img" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=700&q=80" alt="膝関節注射" loading="lazy">
+        <div class="special-card-body">
+          <span class="special-tag">関節治療</span>
+          <h3>膝関節注射</h3>
+          <p>膝の痛みや変形性膝関節症に対して、ヒアルロン酸注射やステロイド注射による治療を行います。長年の膝痛でお困りの方はぜひご相談ください。</p>
+        </div>
+      </div>
+      <div class="special-card">
+        <img class="special-card-img" src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=700&q=80" alt="CT検査" loading="lazy">
+        <div class="special-card-body">
+          <span class="special-tag blue">CT診療</span>
+          <h3>1日で完結するCT診療</h3>
+          <p>検査から結果説明まで同日に完結。CT撮影・読影・診療をスムーズに行い、待ち時間を最小限に抑えた効率的な診療を提供します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フォトバナー2 -->
+<div class="photo-banner">
+  <img src="https://images.unsplash.com/photo-1543333995-a78aea2eee50?w=1400&q=80" alt="美容医療イメージ">
+  <div class="photo-banner-overlay">
+    <div class="photo-banner-text">
+      <div class="label">BEAUTY &amp; WELLNESS</div>
+      <h2>内側から輝く<br>美容医療も</h2>
+      <p>点滴・内服薬による美容ケアをご提供します</p>
+    </div>
+  </div>
+</div>
+
+<!-- 美容部門 -->
+<section class="section beauty-bg" id="beauty">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">BEAUTY</div>
+      <div class="section-title">美容部門</div>
+      <div class="section-desc">医療の力で内側から美しく</div>
+      <div class="divider"></div>
+    </div>
+    <div class="beauty-grid">
+      <div class="beauty-photo">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" alt="美容医療イメージ" loading="lazy">
+      </div>
+      <div>
+        <span class="beauty-badge">&#10024; BEAUTY MENU</span>
+        <p style="font-size:14px;color:#5a4050;line-height:1.9;">医師監修のもと、身体の内側からアプローチする美容医療メニューをご用意しています。肌のハリ・美白・疲労回復など、お悩みに合わせてご提案いたします。</p>
+        <div class="beauty-cards">
+          <div class="beauty-card"><div class="beauty-icon">&#128137;</div><div><h3>ビタミン注射</h3><p>高濃度ビタミンCをはじめとした美肌・疲労回復点滴。即効性が期待できます。</p></div></div>
+          <div class="beauty-card"><div class="beauty-icon">&#11093;</div><div><h3>白玉注射（グルタチオン）</h3><p>強力な抗酸化作用を持つグルタチオン点滴。美白・シミ改善・アンチエイジングに。</p></div></div>
+          <div class="beauty-card"><div class="beauty-icon">&#128138;</div><div><h3>タチオン錠剤処方</h3><p>グルタチオンの内服薬処方。通院が難しい方も継続しやすい美容ケアです。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="section news-bg" id="news">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">NEWS</div>
+      <div class="section-title">お知らせ</div>
+      <div class="section-desc">クリニックからの最新情報</div>
+      <div class="divider"></div>
+    </div>
+    <div class="news-list">
+      <div class="news-item"><div class="news-meta"><span class="news-date">2025年10月1日</span><span class="news-tag important">重要</span></div><span class="news-body">年末年始（12月29日〜1月3日）は休診となります。ご了承ください。</span></div>
+      <div class="news-item"><div class="news-meta"><span class="news-date">2025年9月20日</span><span class="news-tag">新メニュー</span></div><span class="news-body">美容部門を開設しました。ビタミン注射・白玉注射・タチオン錠剤処方のご予約を受け付けています。</span></div>
+      <div class="news-item"><div class="news-meta"><span class="news-date">2025年9月15日</span><span class="news-tag">お知らせ</span></div><span class="news-body">インフルエンザワクチン接種の受付を開始しました。Web予約にてお申し込みください。</span></div>
+      <div class="news-item"><div class="news-meta"><span class="news-date">2025年8月10日</span><span class="news-tag">お知らせ</span></div><span class="news-body">サンノゼの丘クリニックのホームページを開設いたしました。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 医師紹介 -->
+<section class="section" id="doctor">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">DOCTOR</div>
+      <div class="section-title">医師紹介</div>
+      <div class="section-desc">担当医師のご紹介</div>
+      <div class="divider"></div>
+    </div>
+    <div class="doctor-section-grid">
+      <div class="doctor-photo">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="院長 原田聡介" loading="lazy">
+      </div>
+      <div>
+        <div class="doctor-name">原田 聡介</div>
+        <div class="doctor-kana">HARADA SOSUKE</div>
+        <span class="doctor-title-badge">院長・内科医</span>
+        <p class="doctor-bio">地域の皆さまに身近な「かかりつけ医」として、患者さん一人ひとりのお話を丁寧にお聞きしながら、最適な診療を提供することをモットーとしております。<br><br>一般内科はもとより、CT検査を用いた当日完結の精密診療、膝関節注射による整形外科的治療、そして美容医療まで、幅広い医療ニーズにお応えします。<br><br>日曜日の診療も行っておりますので、平日お忙しい方もぜひご利用ください。</p>
+        <div class="doctor-tags">
+          <span class="doctor-tag">内科専門医</span>
+          <span class="doctor-tag">生活習慣病</span>
+          <span class="doctor-tag">CT・画像診断</span>
+          <span class="doctor-tag">関節治療</span>
+          <span class="doctor-tag">美容医療</span>
+          <span class="doctor-tag">予防医学</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 診療時間 -->
+<section class="section time-bg" id="hours">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">CLINIC HOURS</div>
+      <div class="section-title">診療時間・休診日</div>
+      <div class="divider"></div>
+    </div>
+    <div class="time-inner">
+      <div>
+        <table class="time-table">
+          <thead><tr><th>曜日</th><th>午前</th><th>午後</th></tr></thead>
+          <tbody>
+            <tr><td>月曜日</td><td class="time-open">9:00〜12:30</td><td class="time-open">16:00〜18:30</td></tr>
+            <tr><td>火曜日</td><td class="time-open">9:00〜12:30</td><td class="time-open">16:00〜18:30</td></tr>
+            <tr><td>水曜日</td><td class="time-open">9:00〜12:30</td><td class="time-open">16:00〜18:30</td></tr>
+            <tr><td>木曜日</td><td class="time-open">9:00〜12:30</td><td class="time-open">16:00〜18:30</td></tr>
+            <tr><td>金曜日</td><td class="time-open">9:00〜12:30</td><td class="time-open">16:00〜18:30</td></tr>
+            <tr><td>土曜日</td><td class="time-closed">休診</td><td class="time-closed">休診</td></tr>
+            <tr><td>日曜日</td><td class="time-closed">—</td><td class="time-open">15:30〜18:30</td></tr>
+            <tr><td>祝　日</td><td class="time-closed">休診</td><td class="time-closed">休診</td></tr>
+          </tbody>
+        </table>
+        <div class="time-note"><strong>&#128204; ご注意</strong>：受付は診療終了の15分前までとなっております。<br>日曜午後も診療しております。お気軽にご来院ください。</div>
+      </div>
+      <div class="time-photo">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&q=80" alt="院内イメージ" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="section" id="access">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">ACCESS</div>
+      <div class="section-title">アクセス</div>
+      <div class="section-desc">岡山市北区芳賀にございます</div>
+      <div class="divider"></div>
+    </div>
+    <div class="access-grid">
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=701-1221+岡山市北区芳賀1735-79&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="access-info">
+        <div class="access-row"><div class="access-icon">&#128205;</div><div><div class="access-row-label">住所</div><div class="access-row-val">〒701-1221<br>岡山市北区芳賀1735−79</div></div></div>
+        <div class="access-row"><div class="access-icon">&#128222;</div><div><div class="access-row-label">電話番号</div><div class="access-row-val">000-000-0000<br><span style="font-size:12px;color:#7a8c80;">受付時間内にお電話ください</span></div></div></div>
+        <div class="access-row"><div class="access-icon">&#128663;</div><div><div class="access-row-label">交通アクセス</div><div class="access-row-val">お車でのご来院が便利です</div></div></div>
+        <div class="access-row"><div class="access-icon">&#127359;&#65039;</div><div><div class="access-row-label">駐車場</div><div class="access-row-val">駐車場完備（無料）</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">サンノゼの丘クリニック</div>
+    <div class="footer-en">SAN JOSE NO OKA CLINIC</div>
+    <div class="footer-links">
+      <a href="#care">診療案内</a>
+      <a href="#special">特別診療</a>
+      <a href="#beauty">美容部門</a>
+      <a href="#doctor">医師紹介</a>
+      <a href="#hours">診療時間</a>
+      <a href="#access">アクセス</a>
+    </div>
+    <div class="footer-info">〒701-1221 岡山市北区芳賀1735−79<br>診療時間：平日 9:00〜12:30 / 16:00〜18:30　日曜 15:30〜18:30<br>土曜・祝日 休診</div>
+    <div class="footer-copy">&copy; 2025 サンノゼの丘クリニック. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
